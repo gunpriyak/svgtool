@@ -152,6 +152,9 @@ class TopPanel {
         (this.selectedElement.getAttribute('opacity') || 1.0) * 100
       $id('opacity').value = opacPerc
       $id('elem_id').value = this.selectedElement.id
+      $id('elem_data-index').value = this.selectedElement.Number
+      $id('elem_data-capture').value = this.selectedElement.getAttribute('data-capture') ?? ''
+      $id('elem_data-status').value = this.selectedElement.getAttribute('data-status') ?? ''
       $id('elem_class').value = this.selectedElement.getAttribute('class') ?? ''
     }
 
@@ -613,7 +616,7 @@ class TopPanel {
       return false
     }
 
-    if (attr !== 'id' && attr !== 'class') {
+    if (attr !== 'data-status' && attr !== 'class' && attr !== 'data-capture') {
       if (isNaN(val)) {
         val = this.editor.svgCanvas.convertToNum(attr, val)
       } else if (this.editor.configObj.curConfig.baseUnit !== 'px') {
@@ -974,6 +977,9 @@ class TopPanel {
     // all top panel attributes
     [
       'elem_id',
+      'elem_data-status',
+      'elem_data-index',
+      'elem_data-capture',
       'elem_class',
       'circle_cx',
       'circle_cy',
