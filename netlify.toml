@@ -22,4 +22,7 @@
   publish = "/"
   command = "echo 'branch release-v5.1.0 already built'"
 
-
+[[redirects]]
+  from="/"
+  to="/index.html"
+  status= 200
