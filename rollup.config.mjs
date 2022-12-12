@@ -61,18 +61,18 @@ const config = [{
     copy({
       targets: [
         {
-          src: 'src/editor/index.html',
+          src: '/src/editor/index.html',
           dest: 'dist/editor'
         },
         {
-          src: 'src/editor/index.html',
+          src: '/src/editor/index.html',
           dest: 'dist/editor',
           rename: 'xdomain-index.html',
           transform: (contents) => contents.toString()
             .replace("import Editor from './Editor.js'", "import Editor from './xdomain-Editor.js")
         },
         {
-          src: 'src/editor/index.html',
+          src: '/src/editor/index.html',
           dest: 'dist/editor',
           rename: 'iife-index.html',
           transform: (contents) => {
